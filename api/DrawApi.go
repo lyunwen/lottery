@@ -45,7 +45,7 @@ func NDraw(c *gin.Context) {
 			return
 		}
 	}
-	allPeopleCount = allPeopleCount - staffCount - leaderCount;
+	allPeopleCount = allPeopleCount - staffCount - leaderCount
 	if allPeopleCount < 0 {
 		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工人数与领导人数之和 超过设置总人数", "data": nil})
 		return
@@ -143,12 +143,12 @@ func NDraw(c *gin.Context) {
 		}
 	}
 
-	setDataErr:=common.SetData(dataObj)
-	if setDataErr==nil{
+	setDataErr := common.SetData(dataObj)
+	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
 		return
-	}else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": "SetData error", "data": returnData})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
 		return
 	}
 }
@@ -192,7 +192,7 @@ func ExDraw(c *gin.Context) {
 	for i, item := range dataObj.Awards {
 		if item.ID == awardID {
 			break
-			if (i == len(dataObj.Awards)) {
+			if i == len(dataObj.Awards) {
 				c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "奖品类型不在字典内", "data": nil})
 				return
 			}
@@ -289,12 +289,12 @@ func ExDraw(c *gin.Context) {
 			dataObj.BackMoneyRecords = append(dataObj.BackMoneyRecords, backMoneyRecord)
 		}
 	}
-	setDataErr:=common.SetData(dataObj)
-	if setDataErr==nil{
+	setDataErr := common.SetData(dataObj)
+	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
 		return
-	}else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": "SetData error", "data": returnData})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
 		return
 	}
 }
@@ -422,11 +422,11 @@ func PoolDraw(c *gin.Context) {
 		}
 	}
 	setDataErr := common.SetData(dataObj)
-	if setDataErr==nil{
+	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
 		return
-	}else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": "SetData error", "data": returnData})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
 		return
 	}
 }

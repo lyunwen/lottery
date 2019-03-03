@@ -36,31 +36,35 @@ var (
 
 func SetData(data models.Data) error {
 	mutex.Lock()
-	{
-		if fileLock {
-			return errors.New("data file has locked")
-		} else {
-			fileLock = false
-		}
-		preData := GetData()
-		if preData.Version != data.Version {
-			return errors.New("data version error")
-		} else {
-			data.Version = GetUUID()
-		}
-		data, err := CountData(data)
-		if err != nil {
-			return errors.New("CountData error")
-		}
-		dataJsonByte, err := json.Marshal(data)
-		if err != nil {
-			return errors.New("json.Marshal error")
-		}
-		dataJsonStr := string(dataJsonByte)
-		ioutil.WriteFile("data.json", []byte(dataJsonStr), 0644)
+	if fileLock {
+		return errors.New("data.json file has locked")
+	} else {
 		fileLock = true
 	}
+	err := SetDataCore(data)
+	fileLock = false
 	mutex.Unlock()
+	return err
+}
+
+//非线程安全
+func SetDataCore(data models.Data) error {
+	preData := GetData()
+	if preData.Version != data.Version {
+		return errors.New("data version error")
+	} else {
+		data.Version = GetUUID()
+	}
+	data, err := CountData(data)
+	if err != nil {
+		return err
+	}
+	dataJsonByte, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+	dataJsonStr := string(dataJsonByte)
+	ioutil.WriteFile("data.json", []byte(dataJsonStr), 0644)
 	return nil
 }
 
@@ -78,7 +82,7 @@ func CountData(dataObj models.Data) (models.Data, error) {
 		}
 	}
 	if dataObj.Count.PoolMoney < 0 {
-		return dataObj, errors.New("PoolMoney 小于0")
+		return dataObj, errors.New("pool money less than 0")
 	}
 	//AllPeopleCount
 	dataObj.Count.AllPeopleCount = len(dataObj.Users)

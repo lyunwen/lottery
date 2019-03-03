@@ -1,1 +1,1 @@
-2019-03-03 16:11:44|接收消息：
+2019-03-03 16:48:37|发送消息：{"Type":"ready","AllPeopleCount":7,"AwardID":0,"Drawer":"pool","BackMoney":0,"AwardName":"返奖池现金","DrawMoney":"7777","BackRatio":"0","LeaderCount":"0","StaffCount":"7","MixCount":"0","PoolMoney":0}

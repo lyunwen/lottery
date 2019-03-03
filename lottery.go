@@ -2,12 +2,18 @@ package main
 
 import (
 	"./api"
+	"./sockects"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"./sockects"
 )
 
+type Stundent struct {
+	Name string
+	Age  int
+}
+
 func main() {
+
 	router := gin.Default()
 
 	//api路由
@@ -20,7 +26,7 @@ func main() {
 	router.Group("/api/pooldraw").GET("/", api.PoolDraw)
 	router.Group("/api/addMoney").GET("/", api.AddPoolMoney)
 	//web socket 路由
-	router.GET("/ws", func(c *gin.Context) {sockects.WebSocketHandler(c.Writer, c.Request)})
+	router.GET("/ws", func(c *gin.Context) { sockects.WebSocketHandler(c.Writer, c.Request) })
 
 	//html页面路由
 	router.LoadHTMLGlob("views/*")
@@ -31,7 +37,3 @@ func main() {
 
 	router.Run(":12345")
 }
-
-
-
-

@@ -69,12 +69,12 @@ func InitData(c *gin.Context) {
 			}
 		}
 	}
-	setDataErr:=common.SetData(dataObj)
-	if setDataErr==nil{
-		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok",})
+	setDataErr := common.SetData(dataObj)
+	if setDataErr == nil {
+		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return
-	}else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": "SetData error"})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error()})
 		return
 	}
 }
@@ -95,12 +95,12 @@ func AddPoolMoney(c *gin.Context) {
 		UserName: "",
 	})
 
-	setDataErr:=common.SetData(dataObj)
-	if setDataErr==nil{
-		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok",})
+	setDataErr := common.SetData(dataObj)
+	if setDataErr == nil {
+		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return
-	}else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": "SetData error"})
+	} else {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error()})
 		return
 	}
 }
