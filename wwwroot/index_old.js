@@ -851,56 +851,6 @@ $(function () {
                 $("#pooldraw-error-msg").text("");
             }
         },
-
-        QueryInit: function () {
-            $("#btn-record-query").bind("click", function () {
-                Page.QueryAndShowRecords();
-            });
-            $("#btn-back-query").bind("click", function () {
-                Page.QueryAndShowBackMoney();
-            });
-        },
-        QueryAndShowRecords: function () {
-            var awardType = $("#select_drawtype").val();
-            var rtxName = $("#input_rtxname").val();
-            var isReceive = $("#select_receive").val();
-            $.ajax({
-                url: "/api/Record/draw",
-                data: {awardType: awardType, rtxName: rtxName, isReceive: isReceive},
-                dataType: "json",
-                type: "get",
-                success: function (data) {
-                    if (data) {
-                        $("#query-data-area").empty();
-                        for (var i = 0; i < data.length; i++) {
-                            $("#query-data-area").append("<tr data-id=" + data[i].ID + "><td>" + data[i].RtxName + "</td><td>" + data[i].UserLevel + "</td><td>" + data[i].AwardType + "</td><td>" + data[i].AwardValue + "</td><td>" + data[i].DrawTime + "</td><td>" + data[i].IsReceive + "</td><td>" + data[i].Memo + "</td></tr>")
-                        }
-                    }
-                },
-                error: function (e) {
-                    console.log(e);
-                }
-            });
-        },
-        QueryAndShowBackMoney: function () {
-            $.ajax({
-                url: "/api/record/back",
-                data: {rtxName: $("#back-input-rtxname").val(), memo: $("#back-input-memo").val()},
-                dataType: "json",
-                type: "get",
-                success: function (data) {
-                    if (data) {
-                        $("#back-data-area").empty();
-                        for (var i = 0; i < data.length; i++) {
-                            $("#back-data-area").append("<tr data-id=" + data[i].BackTime + "><td>" + data[i].BackTime + "</td><td>" + data[i].RtxName + "</td><td>" + data[i].Money + "</td><td>" + data[i].Memo + "</td></tr>")
-                        }
-                    }
-                },
-                error: function (e) {
-                    console.log(e);
-                }
-            });
-        },
         QueryAndShowStatics: function () {
             $.ajax({
                 url: "/api/count",
@@ -977,49 +927,6 @@ $(function () {
                     Page.QueryAndShowStatics();
                     $("#btn-add-pool").unbind().bind("click", function () {
                         Page.AddPoolMoney()
-                    });
-                }
-            });
-        },
-        AddEggMoneyInit: function () {
-            $("#btn-add-egg").unbind().bind("click", function () {
-                Page.AddEggMoney()
-            });
-        },
-        AddEggMoney: function () {
-            var money_value = $("#input-egg-money").val();
-            var memo_value = $("#input-egg-memo").val();
-            if (parseInt(money_value) > 0) {
-            } else {
-                Page.ShowStaticsMsg("大彩蛋添加金额不正确", null);
-                return;
-            }
-            $.ajax({
-                url: "/api/manager/addegg",
-                data: {
-                    money: money_value, memo: memo_value
-                },
-                dataType: "json",
-                type: "get",
-                beforeSend: function () {
-                    $("#btn-add-egg").unbind();
-                    Page.ShowStaticsMsg("大彩蛋添加中...", null);
-                },
-                success: function (info) {
-                    if (info.code == "0") {//成功
-                        Page.ShowStaticsMsg("大彩蛋添加成功", null);
-                    } else if (info.code == "1") {//已存在
-                        Page.ShowStaticsMsg("大彩蛋添加失败", info.msg);
-                    } else {
-                        Page.EXShowDrawMsg("大彩蛋添加后台异常,确认异常信息是否重新抽奖", info.msg);
-                    }
-                },
-                error: function (e) {
-                    Page.ShowStaticsMsg("大彩蛋添加失败", "系统异常");
-                },
-                complete: function () {
-                    $("#btn-add-egg").unbind().bind("click", function () {
-                        Page.AddEggMoney()
                     });
                 }
             });
