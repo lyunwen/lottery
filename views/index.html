@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="/wwwroot/jquery-3.3.1.min.js"></script>
+</head>
+Index
+</body>
+<script>
+    $(function () {
+        var socket = new WebSocket("ws://localhost:12345/ws");
+        console.log("Socket Connect Success");
+
+        // socket.onopen = function () {
+        //     console.log("Socket Open Success");
+        // }
+
+        socket.onmessage = function (msg) {
+            console.log(msg.data)
+        }
+
+        // socket.onclose = function () {
+        //     console.log("Socket Close Success");
+        // }
+        //
+    })
+</script>
+</html>
