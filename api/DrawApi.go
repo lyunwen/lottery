@@ -52,82 +52,67 @@ func NDraw(c *gin.Context) {
 	}
 	var returnData []models.DrawedRecord
 
-	for i, item := range dataObj.Users {
-		if leaderCount <= 0 {
-			break
+	for i := 0; i < leaderCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 0)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.Level == 2 && item.IsDrawed == false {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     1,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			leaderCount--
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     1,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
-	}
-	if leaderCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "未中奖领导人数不够", "data": nil})
-		return
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
-	for i, item := range dataObj.Users {
-		if staffCount <= 0 {
-			break
+	for i := 0; i < staffCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 0)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.Level == 1 && item.IsDrawed == false {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     1,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			staffCount--
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     1,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
-	}
-	if staffCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "未中奖员工人数不够", "data": nil})
-		return
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
-	for i, item := range dataObj.Users {
-		if allPeopleCount <= 0 {
-			break
+	for i := 0; i < allPeopleCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 0)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.IsDrawed == false {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     1,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			allPeopleCount--
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     1,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
-	}
-	if allPeopleCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "未中奖人数不够", "data": nil})
-		return
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
 	for _, item := range returnData {
@@ -200,83 +185,68 @@ func ExDraw(c *gin.Context) {
 	}
 
 	var returnData []models.DrawedRecord
-	for i, item := range dataObj.Users {
-		if mixPeopleCount <= 0 {
-			break
+
+	for i := 0; i < mixPeopleCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 0)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.IsDrawed == false {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			mixPeopleCount--
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
-	if mixPeopleCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "未中奖人数不够", "data": nil})
-		return
+	for i := 0; i < leaderCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 2)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
+		}
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
+		}
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
+	}
+	for i := 0; i < staffCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 1)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
+		}
+		record := models.DrawedRecord{
+			AwardID:        awardID,
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
+		}
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
-	for i, item := range dataObj.Users {
-		if leaderCount <= 0 {
-			break
-		}
-		if item.IsDrawed == false && item.Level == 2 {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			leaderCount--
-		}
-	}
-	if leaderCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "领导未中奖人数不够", "data": nil})
-		return
-	}
-
-	for i, item := range dataObj.Users {
-		if staffCount <= 0 {
-			break
-		}
-		if item.IsDrawed == false && item.Level == 1 {
-			record := models.DrawedRecord{
-				AwardID:        awardID,
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			staffCount--
-		}
-	}
-	if staffCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工未中奖人数不够", "data": nil})
-		return
-	}
 	for _, item := range returnData {
 		if item.LuckyUserLevel == 2 {
 			backMoneyRecord := models.BackMoneyRecord{
@@ -330,83 +300,70 @@ func PoolDraw(c *gin.Context) {
 	}
 	dataObj := common.GetData()
 	var returnData []models.DrawedRecord
-	for i, item := range dataObj.Users {
-		if mixPeopleCount <= 0 {
-			break
+
+	for i := 0; i < mixPeopleCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 0)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.IsDrawed == false {
-			record := models.DrawedRecord{
-				AwardID:        0, //返奖池奖品类型
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			mixPeopleCount--
+		record := models.DrawedRecord{
+			AwardID:        0, //返奖池奖品类型
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
-	}
-	if mixPeopleCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "未中奖人数不够", "data": nil})
-		return
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
-	for i, item := range dataObj.Users {
-		if leaderCount <= 0 {
-			break
+	for i := 0; i < leaderCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 2)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.IsDrawed == false && item.Level == 2 {
-			record := models.DrawedRecord{
-				AwardID:        0, //返奖池奖品类型
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			leaderCount--
+		record := models.DrawedRecord{
+			AwardID:        0, //返奖池奖品类型
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
-	}
-	if leaderCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "领导未中奖人数不够", "data": nil})
-		return
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
 
-	for i, item := range dataObj.Users {
-		if staffCount <= 0 {
-			break
+	for i := 0; i < staffCount; i++ {
+		index, err := GetLuckyUserID(dataObj.Users, 1)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
+			return
 		}
-		if item.IsDrawed == false && item.Level == 1 {
-			record := models.DrawedRecord{
-				AwardID:        0, //返奖池奖品类型
-				AwardCount:     awardCount,
-				Drawer:         drawer,
-				DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-				LuckyUserID:    item.ID,
-				LuckyUserLevel: item.Level,
-				LuckyUserName:  item.Name,
-				Memo:           memo,
-			}
-			dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-			returnData = append(returnData, record)
-			dataObj.Users[i].IsDrawed = true
-			staffCount--
+		record := models.DrawedRecord{
+			AwardID:        0, //返奖池奖品类型
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    dataObj.Users[index].ID,
+			LuckyUserLevel: dataObj.Users[index].Level,
+			LuckyUserName:  dataObj.Users[index].Name,
+			Memo:           memo,
 		}
+		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
+		returnData = append(returnData, record)
+		dataObj.Users[index].IsDrawed = true
 	}
-	if staffCount > 0 {
-		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工未中奖人数不够", "data": nil})
-		return
-	}
+
 	if backRatio > 0 {
 		for _, item := range returnData {
 			if item.LuckyUserLevel == 2 {

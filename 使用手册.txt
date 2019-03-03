@@ -1,5 +1,10 @@
-1. 三个文件 lottery.exe/data.json/log.txt  一个不能少
+注意：
+1.三个文件 lottery.exe/data.json/log.txt  一个不能少
 
 2.所有的数据配置都在data.json里面，数据格式严格按照案例格式调整
 
-3.
+
+运行 lottery.exe
+浏览器：打开 http://localhost:12345/view/index 为抽奖前端页面
+浏览器：打开 http://localhost:12345/view/behind 为抽奖后台页面
+然后自己摸索..
