@@ -1,3 +1,5 @@
-1. Èý¸öÎÄ¼þ lottery.exe/data.json/log.txt  Ò»¸ö²»ÄÜÉÙ
+1. ä¸‰ä¸ªæ–‡ä»¶ lottery.exe/data.json/log.txt  ä¸€ä¸ªä¸èƒ½å°‘
 
-2.ËùÓÐµÄÊý¾ÝÅäÖÃ¶¼ÔÚdata.jsonÀïÃæ£¬Êý¾Ý¸ñÊ½ÑÏ¸ñ°´ÕÕ°¸Àý¸ñÊ½µ÷Õû
+2.æ‰€æœ‰çš„æ•°æ®é…ç½®éƒ½åœ¨data.jsoné‡Œé¢ï¼Œæ•°æ®æ ¼å¼ä¸¥æ ¼æŒ‰ç…§æ¡ˆä¾‹æ ¼å¼è°ƒæ•´
+
+3.
