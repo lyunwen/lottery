@@ -1,1 +1,1 @@
-2019-03-03 18:58:02|发送消息：{"Type":"ready","AllPeopleCount":1,"AwardID":"1","Drawer":"","BackMoney":"0","AwardName":"testName1","AwardPicName":"1.png","AwardCount":"1","LeaderCount":"1","StaffCount":"0","MixCount":"0","Memo":"","PoolMoney":0}
+2019-03-03 19:04:22|发送消息：{"Type":"stop","PoolMoney":0}
