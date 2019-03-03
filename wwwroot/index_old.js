@@ -986,10 +986,8 @@ $(function () {
             return poolMoney;
         },
 
+        //web socket obj
         Connection: null,
-        ConnectionReceived: function (data) {
-            console.log(data);
-        },
     }
     Page.Init();
 });
