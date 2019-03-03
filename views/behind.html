@@ -1,17 +1,224 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
     <script type="text/javascript" src="/wwwroot/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/wwwroot/index.js"></script>
+    <script type="text/javascript" src="/wwwroot/index_old.js"></script>
+    <title></title>
+    <style>
+        body { font-size: 16px; font-family: 'Microsoft YaHei'; color: #000000; }
+        #draw-record tr, #draw-record td, #draw-record th { border: 1px #666 solid; width: 0px; }
+        .draw-lable { width: 130px; margin: 0 10px; display: inline-block; }
+        .draw-span { display: inline-block; margin: 0 10px; }
+        .draw-title { font-size: 1.2rem; font-weight: bold; }
+        .draw-btn { margin: 10px; width: 100px; height: 35px; }
+        .draw-btn-disable { background-color: #f00; display: none; }
+        .draw-text { width: 200px; height: 30px; line-height: 30px; padding: 0px; }
+        .draw-select { width: 200px; height: 34px; line-height: 30px; }
+
+        .drops { position: relative; }
+        .drops .close { z-index: 9999; position: absolute; right: 25px; top: 3px; }
+        .drops .drop { position: absolute; width: 100%; z-index: 999; }
+        .drops .drop ul { margin: 0; padding: 0; display: block; width: 100%; max-height: 220px; background: #fff; border: 1px solid #d8dce5; border-top: 0; overflow: auto; }
+        .drops .drop ul li { list-style-type: none; line-height: 28px; padding-left: 5px; }
+        .drops .drop ul li:hover { background: #fafbfc; cursor: pointer; color: #4f4f4c; }
+        .drops .drop ul li.active { background: #8ec1f5; }
+    </style>
 </head>
-Behind
-<p><input type="button" value="连接" id="btn_socket_connect"/></p>
-<p><input type="button" value="发送" id="btn_socket_send"/>：<input type="text" id="txt_send_value" value=""/></p>
-<p><input type="button" value="断开" id="btn_socket_close"/></p>
-<p><label for="txt_receive_value">接收： <input type="text" value="" id="txt_receive_value"></label></p>
+
+<body>
+<div class="content">
+    <div id="draw-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px">
+        <p class="draw-title">操作区域</p>
+        <p style="height:25px;">
+            <span class="draw-lable">本轮抽奖信息:</span>
+            <span id="now-award-info"> </span>
+            <input type="hidden" id="input-next-award" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">中奖领导人数:</span>
+            <input type="number" class="draw-text" id="ndraw-leader-count" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">中奖备注:</span>
+            <input type="text" class="draw-text" id="ndraw-memo" maxlength="30" />
+        </p>
+        <p style="height:55px;">
+            <input type="button" id="btn-ndraw-ready" class="draw-btn" value="准备" />
+            <input type="button" id="btn-ndraw-start" class="draw-btn" value="开始" />
+            <input type="button" id="btn-ndraw-stop" class="draw-btn" value="停止" />
+        </p>
+        <p><label>提示信息:</label><i id="ndraw-warn-msg" style="color:#666;"></i></p>
+        <p><label>错误信息:</label><i id="ndraw-error-msg" style="color:red;"></i></p>
+    </div>
+    <div id="exdraw-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px">
+        <p class="draw-title">加奖操作区域</p>
+        <p style="height:25px;">
+            <span class="draw-lable">中奖物品:</span>
+            <select id="exdraw-type" class="draw-select">
+                @foreach (var item in FitLottery.Models.Behind.BOAward.BOAwards)
+                {
+                <option value="@(item.IntValue)" data-name="@item.AwardCName.Replace('_',' ')" data-url="@(item.AwardUrl)">@item.AwardCName.Replace('_', ' ')</option>
+                }
+            </select>
+            <input type="number" class="draw-text" id="exdraw-type-value" value="1" />
+            <i style="color:#929292;font-size:0.5rem;">提示：此中奖数量为单人中奖数量</i>
+        </p>
+        <div style="height:25px;">
+            <span class="draw-lable">抽奖人名称:</span>
+            <div style="display:inline-block;width:204px;" class="drops">
+                <input type="text" class="draw-text js-autocomplete-input" id="exdraw-drawer" />
+            </div>
+            <i style="color:#929292;font-size:0.5rem;">提示：现金红包、黄金红包可设置抽奖人，用于显示在抽奖页面</i>
+        </div>
+        <p style="height:25px;">
+            <span class="draw-lable">领导人数:</span>
+            <input type="number" class="draw-text" id="exdraw-leader-count" value="0" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">员工人数:</span>
+            <input type="number" class="draw-text" id="exdraw-staff-count" value="0" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">混合人数:</span>
+            <input type="number" class="draw-text" id="exdraw-mix-count"  value="0"/>
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">单人返奖金额:</span>
+            <input type="number" class="draw-text" id="exdraw-backmoney"  value="0"/>
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">中奖备注:</span>
+            <input type="text" class="draw-text" id="exdraw-memo" maxlength="30" />
+        </p>
+        <p style="height:55px;">
+            <input type="button" id="btn-exdraw-ready" class="draw-btn" value="准备" />
+            <input type="button" id="btn-exdraw-start" class="draw-btn" value="开始" />
+            <input type="button" id="btn-exdraw-stop" class="draw-btn" value="停止" />
+        </p>
+        <p><label>提示信息:</label><i id="warn-msg" style="color:#666;"></i></p>
+        <p><label>错误信息:</label><i id="error-msg" style="color:red;"></i></p>
+    </div>
+
+    <div id="exdraw-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px">
+        <p class="draw-title">
+            <label>奖池操作区域</label>
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">单人中奖金额:</span>
+            <input type="number" class="draw-text" id="pooldraw-money" value="0"/>
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">领导返奖系数:</span>
+            <input type="number" class="draw-text" id="pooldraw-leader-ratio"  value="0" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">领导人数:</span>
+            <input type="number" class="draw-text" id="pooldraw-leader-count" value="0" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">员工人数:</span>
+            <input type="number" class="draw-text" id="pooldraw-staff-count" value="0"/>
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">混合人数:</span>
+            <input type="number" class="draw-text" id="pooldraw-mix-count"  value="0" />
+        </p>
+        <p style="height:25px;">
+            <span class="draw-lable">中奖备注:</span>
+            <input type="text" class="draw-text" id="pooldraw-memo" maxlength="30" />
+        </p>
+        <p style="height:55px;">
+            <input type="button" id="btn-pooldraw-ready" class="draw-btn" value="准备" />
+            <input type="button" id="btn-pooldraw-start" class="draw-btn" value="开始" />
+            <input type="button" id="btn-pooldraw-stop" class="draw-btn" value="停止" />
+        </p>
+        <p><label>提示信息:</label><i id="pooldraw-warn-msg" style="color:#666;"></i></p>
+        <p><label>错误信息:</label><i id="pooldraw-error-msg" style="color:red;"></i></p>
+    </div>
+
+    <div id="count-area" style="margin:5px;padding:5px;border:solid 2px red; width:300px;position:fixed; top:0px;right:0px;">
+        <p class="draw-title">数据统计区域</p>
+        <p><span class="draw-lable">总人数：</span><span id="count-all">待初始化</span></p>
+        <p><span class="draw-lable">现金奖池金额：</span><span id="count-poolmoney">待初始化</span></p>
+        <p>
+            <label>金额：<input style="width:65px;" type="number" id="input-pool-money" /></label>
+            <label>备注：<input style="width:50px;" type="text" id="input-pool-memo" maxlength="20" /></label>
+            <input type="button" id="btn-add-pool" value="添加" />
+        </p>
+        <p><span class="draw-lable">中奖总人数：</span><span id="count-lucky-all">待初始化</span></p>
+        <p><span class="draw-lable">中奖领导人数：</span><span id="count-lucky-leader">待初始化</span></p>
+        <p><span class="draw-lable">未中奖领导人数：</span><span id="count-nolucky-leader">待初始化</span></p>
+        <p><span class="draw-lable">中奖员工人数：</span><span id="count-lucky-staff">待初始化</span></p>
+        <p><span class="draw-lable">未中奖员工人数：</span><span id="count-nolucky-staff">待初始化</span></p>
+
+        <p><label>提示信息:</label><i id="count-warn-msg" style="color:#666;"></i></p>
+        <p><label>错误信息:</label><i id="count-error-msg" style="color:red;"></i></p>
+        <p><input type="button" id="btn-data-count" value="重新查询" /></p>
+        <p><input type="password" id="input-data-init" /><input type="button" id="btn-data-init" value="后台数据初始化" /></p>
+        <p><input type="button" id="btn-view-init" value="抽奖页面初始化" /></p>
+        <p><input type="button" id="btn-view-on" value="展示主视觉" />
+            <input type="button" id="btn-view-off" value="隐藏主视觉" />
+            <input type="button" id="btn-view-empty" value="清空界面" /></p>
+        <p><input type="button" id="btn-draw-stop" value="停止抽奖" /></p>
+    </div>
+    <div id="query-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px;">
+        <p class="draw-title">中奖查询区域</p>
+        <div id="query-act">
+            <label><span class="draw-span">RtxName:</span><input type="text" id="input_rtxname" class="draw-text" value="" /></label>
+            <label>
+                <span class="draw-span">奖品类型:</span>
+                <select id="select_drawtype" class="draw-select">
+                    <option value="0">全部</option>
+                    @foreach (var item in FitLottery.Models.Behind.BOAward.BOAwards)
+                    {
+                    <option value="@(item.IntValue)">@item.AwardCName</option>
+                    }
+                </select>
+            </label>
+            <label>
+                <span class="draw-span">是否领取:</span>
+                <select id="select_receive" class="draw-select">
+                    <option value="99">全部</option>
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </label>
+            <input type="button" id="btn-record-query" class="draw-btn" value="查询" />
+        </div>
+        <table id="draw-record" style="margin:10px;" cellspacing="0">
+            <thead>
+            <tr>
+                <th>TRX</th>
+                <th>等级</th>
+                <th>奖品类型</th>
+                <th>奖品数量</th>
+                <th>中奖时间</th>
+                <th>是否领取</th>
+                <th>中奖备注</th>
+            </tr>
+            </thead>
+            <tbody id="query-data-area"></tbody>
+        </table>
+    </div>
+    <div id="query-backmoney-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px;">
+        <p class="draw-title">返奖查询区域</p>
+        <div id="query-act">
+            <label><span class="draw-span">RtxName:</span><input type="text" id="back-input-rtxname" class="draw-text" value="" /></label>
+            <label><span class="draw-span">备注:</span><input type="text" id="back-input-memo" class="draw-text" value="" /></label>
+            <input type="button" id="btn-back-query" class="draw-btn" value="查询" />
+        </div>
+        <table id="draw-record" style="margin:10px;" cellspacing="0">
+            <thead>
+            <tr>
+                <th>返奖时间</th>
+                <th>RtxName</th>
+                <th>返奖金额</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody id="back-data-area"></tbody>
+        </table>
+    </div>
+</div>
 </body>
-<script>
-</script>
 </html>
