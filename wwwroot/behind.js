@@ -289,12 +289,10 @@ $(function () {
         Init: function () {
             Page.Connection = new WebSocket("ws://localhost:12345/ws");
 
-            this.QueryInit();
             this.EXDrawInit();
             this.NDrawInit();
             this.PoolDrawInit();
             this.AddPoolMoneyInit();
-            this.AddEggMoneyInit();
             Page.QueryAndShowStatics();
             Page.NGetAndSetNextAward();
             Page.ExDrawSelectDataInit();
@@ -456,7 +454,7 @@ $(function () {
             try {
                 var nextAward = JSON.parse(nextAwardStr);
                 if (nextAward.code == 0) {
-                    Page.ReadyObj.PeopleCount = nextAward.data.PeopleCount;
+                    Page.ReadyObj.AllPeopleCount = nextAward.data.PeopleCount;
                     Page.ReadyObj.AwardID = nextAward.data.AwardID;
                     Page.ReadyObj.BackMoney = nextAward.data.BackMoney;
                     Page.Connection.send(JSON.stringify(Page.ReadyObj));

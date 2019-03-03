@@ -29,8 +29,8 @@ func GetData() models.Data {
 	json.Unmarshal([]byte(dataJsonStr), &dataObj)
 	return dataObj
 }
+
 var (
-	wg sync.WaitGroup
 	mutex sync.Mutex
 )
 
@@ -42,11 +42,11 @@ func SetData(data models.Data) error {
 		} else {
 			fileLock = false
 		}
-		preData:=GetData()
-		if preData.Version!=data.Version{
-			return  errors.New("data version error")
-		}else {
-			data.Version=GetUUID()
+		preData := GetData()
+		if preData.Version != data.Version {
+			return errors.New("data version error")
+		} else {
+			data.Version = GetUUID()
 		}
 		data, err := CountData(data)
 		if err != nil {
@@ -61,12 +61,10 @@ func SetData(data models.Data) error {
 		fileLock = true
 	}
 	mutex.Unlock()
-	wg.Done()
 	return nil
 }
 
 var fileLock bool = false
-
 
 func CountData(dataObj models.Data) (models.Data, error) {
 	//PoolMoney
@@ -128,7 +126,7 @@ func CountData(dataObj models.Data) (models.Data, error) {
 func Log(log string) {
 	log = time.Now().Format("2006-01-02 15:04:05") + "|" + log
 	f, err := os.OpenFile("log.txt", os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0644)
-	if (err != nil) {
+	if err != nil {
 		return
 	}
 	f.WriteString(log)

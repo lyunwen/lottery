@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/api/ManageApi.go" line="76" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3fac9bc9-cf2a-4ce1-b525-f0ccb25b1ad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fit-lottery.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/func_file.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/func_file.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/behind.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/behind.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index_old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/index_old.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/behind.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/behind.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/behind.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +37,69 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wwwroot/behind.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="418" column="10" lean-forward="true" selection-start-line="418" selection-start-column="10" selection-end-line="418" selection-end-column="10" />
+              <folding>
+                <element signature="e#14620#14779#0" />
+                <element signature="e#14816#15374#0" />
+                <element signature="e#15425#15962#0" />
+                <element signature="e#17365#19176#0" />
+                <element signature="e#19209#19760#0" />
+                <element signature="e#19813#20151#0" />
+                <element signature="e#20194#21241#0" />
+                <element signature="e#21276#21855#0" />
+                <element signature="e#21896#22491#0" />
+                <element signature="e#22529#23199#0" />
+                <element signature="e#23234#24849#0" />
+                <element signature="e#24884#26819#0" />
+                <element signature="e#26853#27173#0" />
+                <element signature="e#27227#27541#0" />
+                <element signature="e#27578#28175#0" />
+                <element signature="e#28218#28823#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/behind.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="158" column="65" lean-forward="true" selection-start-line="158" selection-start-column="65" selection-end-line="158" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+              <folding>
+                <element signature="n#!!block;n#AddPoolMoney#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/common/func_file.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!block;n#CountData#0" />
+                <element signature="n#!!block;n#Log#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -55,8 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>返奖金额:</find>
-      <find>xtAward = JSON.parse(nextA</find>
       <find>stringify</find>
       <find>NGetDrawParam</find>
       <find>总人数错误</find>
@@ -85,6 +140,8 @@
       <find>QueryAndShowBackMoney</find>
       <find>ConnectionReceived</find>
       <find>SetData(dataObj)</find>
+      <find>中奖查询区域</find>
+      <find>PeopleCount</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="D:\GO-ROOT" />
@@ -98,7 +155,6 @@
         <option value="$PROJECT_DIR$/view/index.html" />
         <option value="$PROJECT_DIR$/wwwroot/jQuery 3.3.1.js" />
         <option value="$PROJECT_DIR$/common/func_websokect.go" />
-        <option value="$PROJECT_DIR$/views/behind.html" />
         <option value="$PROJECT_DIR$/note.txt" />
         <option value="$PROJECT_DIR$/sockects/sokects.go" />
         <option value="$PROJECT_DIR$/models/DrawedAction.go" />
@@ -115,10 +171,12 @@
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/api/DrawApi.go" />
         <option value="$PROJECT_DIR$/api/ManageApi.go" />
-        <option value="$PROJECT_DIR$/common/func_file.go" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/使用手册.txt" />
         <option value="$PROJECT_DIR$/wwwroot/index_old.js" />
+        <option value="$PROJECT_DIR$/views/behind.html" />
+        <option value="$PROJECT_DIR$/wwwroot/behind.js" />
+        <option value="$PROJECT_DIR$/common/func_file.go" />
       </list>
     </option>
   </component>
@@ -141,6 +199,11 @@
             <path>
               <item name="fit-lottery" type="b2602c69:ProjectViewProjectNode" />
               <item name="fit-lottery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fit-lottery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fit-lottery" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fit-lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -215,13 +278,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1216" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12579957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32963988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32841328" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32779318" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27423823" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -229,7 +294,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32841328" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28070176" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.28070176" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -254,6 +319,24 @@
           <line>302</line>
           <properties />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/common/func_file.go</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/api/ManageApi.go</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/common/func_file.go</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -304,13 +387,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/index.html" />
-    <entry file="file://D:/GO-PATH/src/github.com/gin-gonic/gin/recovery.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="38" column="5" lean-forward="true" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.vs/VSWorkspaceState.json" />
     <entry file="file://D:/GO-PATH/src/github.com/gin-gonic/gin/gin.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -390,13 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/GO-ROOT/src/runtime/asm_amd64.s">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="1337" column="50" lean-forward="true" selection-start-line="1337" selection-start-column="50" selection-end-line="1337" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wwwroot/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -470,18 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#13#90#0" expanded="true" />
-            <element signature="n#!!block;n#InitData#0" />
-            <element signature="e#3150#3155#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -503,71 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wwwroot/behind.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="533" column="26" lean-forward="true" selection-start-line="533" selection-start-column="26" selection-end-line="533" selection-end-column="26" />
-          <folding>
-            <element signature="e#39#836#0" />
-            <element signature="e#871#1613#0" />
-            <element signature="e#1619#1697#0" />
-            <element signature="e#1735#1962#0" />
-            <element signature="e#1997#10305#0" />
-            <element signature="e#11444#11506#0" />
-            <element signature="e#11525#11583#0" />
-            <element signature="e#11795#11857#0" />
-            <element signature="e#11876#11939#0" />
-            <element signature="e#11962#12047#0" />
-            <element signature="e#12081#12687#0" />
-            <element signature="e#12721#12854#0" />
-            <element signature="e#12884#13060#0" />
-            <element signature="e#13091#13268#0" />
-            <element signature="e#13301#13480#0" />
-            <element signature="e#13512#13698#0" />
-            <element signature="e#13731#14301#0" />
-            <element signature="e#21375#21810#0" />
-            <element signature="e#21848#22775#0" />
-            <element signature="e#23235#24964#0" />
-            <element signature="e#25090#27135#0" />
-            <element signature="e#27169#27489#0" />
-            <element signature="e#27543#27857#0" />
-            <element signature="e#27894#28491#0" />
-            <element signature="e#28534#28979#0" />
-            <element signature="e#29019#29533#0" />
-            <element signature="e#29297#30691#0" />
-            <element signature="e#32165#34200#0" />
-            <element signature="e#34236#34562#0" />
-            <element signature="e#34618#34968#0" />
-            <element signature="e#37253#38575#0" />
-            <element signature="e#38615#38718#0" />
-            <element signature="e#38754#40570#0" />
-            <element signature="e#42255#42593#0" />
-            <element signature="e#42628#42652#0" />
-            <element signature="e#42630#43206#0" />
-            <element signature="e#42682#43164#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/func_file.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="50" column="36" lean-forward="true" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
-          <folding>
-            <element signature="e#16#162#0" expanded="true" />
-            <element signature="n#!!block;n#CountData#0" />
-            <element signature="n#!!block;n#Log#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/behind.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="115" column="90" lean-forward="true" selection-start-line="115" selection-start-column="90" selection-end-line="115" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -617,6 +609,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/behind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="158" column="65" lean-forward="true" selection-start-line="158" selection-start-column="65" selection-end-line="158" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wwwroot/behind.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="418" column="10" lean-forward="true" selection-start-line="418" selection-start-column="10" selection-end-line="418" selection-end-column="10" />
+          <folding>
+            <element signature="e#14620#14779#0" />
+            <element signature="e#14816#15374#0" />
+            <element signature="e#15425#15962#0" />
+            <element signature="e#17365#19176#0" />
+            <element signature="e#19209#19760#0" />
+            <element signature="e#19813#20151#0" />
+            <element signature="e#20194#21241#0" />
+            <element signature="e#21276#21855#0" />
+            <element signature="e#21896#22491#0" />
+            <element signature="e#22529#23199#0" />
+            <element signature="e#23234#24849#0" />
+            <element signature="e#24884#26819#0" />
+            <element signature="e#26853#27173#0" />
+            <element signature="e#27227#27541#0" />
+            <element signature="e#27578#28175#0" />
+            <element signature="e#28218#28823#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/GO-PATH/src/github.com/gin-gonic/gin/recovery.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!block;n#AddPoolMoney#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/GO-ROOT/src/runtime/asm_amd64.s">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="1336" selection-start-line="1336" selection-end-line="1336" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/func_file.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#CountData#0" />
+            <element signature="n#!!block;n#Log#0" />
+          </folding>
         </state>
       </provider>
     </entry>

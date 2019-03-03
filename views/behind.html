@@ -161,64 +161,6 @@
             <input type="button" id="btn-view-empty" value="清空界面" /></p>
         <p><input type="button" id="btn-draw-stop" value="停止抽奖" /></p>
     </div>
-    <div id="query-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px;">
-        <p class="draw-title">中奖查询区域</p>
-        <div id="query-act">
-            <label><span class="draw-span">RtxName:</span><input type="text" id="input_rtxname" class="draw-text" value="" /></label>
-            <label>
-                <span class="draw-span">奖品类型:</span>
-                <select id="select_drawtype" class="draw-select">
-                    <option value="0">全部</option>
-                    @foreach (var item in FitLottery.Models.Behind.BOAward.BOAwards)
-                    {
-                    <option value="@(item.IntValue)">@item.AwardCName</option>
-                    }
-                </select>
-            </label>
-            <label>
-                <span class="draw-span">是否领取:</span>
-                <select id="select_receive" class="draw-select">
-                    <option value="99">全部</option>
-                    <option value="0">否</option>
-                    <option value="1">是</option>
-                </select>
-            </label>
-            <input type="button" id="btn-record-query" class="draw-btn" value="查询" />
-        </div>
-        <table id="draw-record" style="margin:10px;" cellspacing="0">
-            <thead>
-            <tr>
-                <th>TRX</th>
-                <th>等级</th>
-                <th>奖品类型</th>
-                <th>奖品数量</th>
-                <th>中奖时间</th>
-                <th>是否领取</th>
-                <th>中奖备注</th>
-            </tr>
-            </thead>
-            <tbody id="query-data-area"></tbody>
-        </table>
-    </div>
-    <div id="query-backmoney-area" style="margin:5px;padding:5px;border:solid 2px red; width:950px;">
-        <p class="draw-title">返奖查询区域</p>
-        <div id="query-act">
-            <label><span class="draw-span">RtxName:</span><input type="text" id="back-input-rtxname" class="draw-text" value="" /></label>
-            <label><span class="draw-span">备注:</span><input type="text" id="back-input-memo" class="draw-text" value="" /></label>
-            <input type="button" id="btn-back-query" class="draw-btn" value="查询" />
-        </div>
-        <table id="draw-record" style="margin:10px;" cellspacing="0">
-            <thead>
-            <tr>
-                <th>返奖时间</th>
-                <th>RtxName</th>
-                <th>返奖金额</th>
-                <th>备注</th>
-            </tr>
-            </thead>
-            <tbody id="back-data-area"></tbody>
-        </table>
-    </div>
 </div>
 </body>
 </html>
