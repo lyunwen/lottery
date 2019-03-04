@@ -1,24 +1,8 @@
 $(function () {
 
     var leaderArray = [
-        {min: 'bobli', 'name': '李波'},
-        {min: 'rickyyan', 'name': '闫敏'},
-        {min: 'shawnli', 'name': '李晓佑'},
-        {min: 'mandywang', 'name': '王影'},
-        {min: 'hymanxie', 'name': '谢怀遥'},
-        {min: 'silonli', 'name': '李善林'},
-        {min: 'lynnning', 'name': '宁强'},
-        {min: 'swordwu', 'name': '吴剑'},
-        {min: 'greyqiao', 'name': '乔成'},
-        {min: 'louisjiang', 'name': '江能沐'},
-        {min: 'capableguo', 'name': '郭亿清'},
-        {min: 'ianwu', 'name': '吴建国'},
-        {min: 'zeikzheng', 'name': '郑旭'},
-        {min: 'vickychi', 'name': '迟冠群'},
-        {min: 'slarkzhang', 'name': '张梁'},
-        {min: 'vickyhhli', 'name': '李慧慧'},
-        {min: 'xiaomeizhang', 'name': '张小妹'},
-        {min: 'rockenmeng', 'name': '孟同亮'}
+        {min: 'xx', 'name': '波波'},
+        {min: 'yy', 'name': '敏敏'},
 
     ];
 
