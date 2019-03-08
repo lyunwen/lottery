@@ -7,10 +7,6 @@ import (
 	"net/http"
 )
 
-type Stundent struct {
-	Name string
-	Age  int
-}
 
 func main() {
 
