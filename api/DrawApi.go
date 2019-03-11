@@ -23,7 +23,12 @@ func NDraw(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工人数错误", "data": nil})
 		return
 	}
-	dataObj := common.GetData()
+	var dataObj = new(models.Data)
+	dataObj, err = dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据失败", "data": nil})
+		return
+	}
 	actionID := c.Query("actionID")
 	var awardID int
 	var allPeopleCount int
@@ -100,6 +105,7 @@ func NDraw(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
 			return
 		}
+
 		record := models.DrawedRecord{
 			AwardID:        awardID,
 			AwardCount:     1,
@@ -128,14 +134,14 @@ func NDraw(c *gin.Context) {
 		}
 	}
 
-	setDataErr := common.SetData(dataObj)
+	setDataErr := dataObj.SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
 		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
-		return
 	}
+	c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
+	return
+
 }
 
 func ExDraw(c *gin.Context) {
@@ -173,14 +179,18 @@ func ExDraw(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工人数错误", "data": nil})
 		return
 	}
-	dataObj := common.GetData()
+	var dataObj = new(models.Data)
+	dataObj, err = dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 	for i, item := range dataObj.Awards {
 		if item.ID == awardID {
 			break
-			if i == len(dataObj.Awards) {
-				c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "奖品类型不在字典内", "data": nil})
-				return
-			}
+		} else if i == len(dataObj.Awards) {
+			c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "奖品类型不在字典内", "data": nil})
+			return
 		}
 	}
 
@@ -259,7 +269,7 @@ func ExDraw(c *gin.Context) {
 			dataObj.BackMoneyRecords = append(dataObj.BackMoneyRecords, backMoneyRecord)
 		}
 	}
-	setDataErr := common.SetData(dataObj)
+	setDataErr := dataObj.SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
 		return
@@ -298,92 +308,25 @@ func PoolDraw(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "员工人数错误", "data": nil})
 		return
 	}
-	dataObj := common.GetData()
-	var returnData []models.DrawedRecord
-
-	for i := 0; i < mixPeopleCount; i++ {
-		index, err := GetLuckyUserID(dataObj.Users, 0)
-		if err != nil {
-			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
-			return
-		}
-		record := models.DrawedRecord{
-			AwardID:        0, //返奖池奖品类型
-			AwardCount:     awardCount,
-			Drawer:         drawer,
-			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-			LuckyUserID:    dataObj.Users[index].ID,
-			LuckyUserLevel: dataObj.Users[index].Level,
-			LuckyUserName:  dataObj.Users[index].Name,
-			Memo:           memo,
-		}
-		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-		returnData = append(returnData, record)
-		dataObj.Users[index].IsDrawed = true
+	var dataObj = new(models.Data)
+	dataObj, err = dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
 	}
-
-	for i := 0; i < leaderCount; i++ {
-		index, err := GetLuckyUserID(dataObj.Users, 2)
-		if err != nil {
-			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
-			return
-		}
-		record := models.DrawedRecord{
-			AwardID:        0, //返奖池奖品类型
-			AwardCount:     awardCount,
-			Drawer:         drawer,
-			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-			LuckyUserID:    dataObj.Users[index].ID,
-			LuckyUserLevel: dataObj.Users[index].Level,
-			LuckyUserName:  dataObj.Users[index].Name,
-			Memo:           memo,
-		}
-		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-		returnData = append(returnData, record)
-		dataObj.Users[index].IsDrawed = true
+	preRecords := dataObj.DrawedRecords[:len(dataObj.DrawedRecords)]
+	dataObj, err = dataObj.PoolDraw(common.GetUUID(), staffCount, leaderCount, mixPeopleCount, awardCount, backRatio, drawer, memo)
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": ""})
+		return
 	}
-
-	for i := 0; i < staffCount; i++ {
-		index, err := GetLuckyUserID(dataObj.Users, 1)
-		if err != nil {
-			c.JSON(http.StatusOK, gin.H{"code": "99", "msg": err.Error(), "data": returnData})
-			return
-		}
-		record := models.DrawedRecord{
-			AwardID:        0, //返奖池奖品类型
-			AwardCount:     awardCount,
-			Drawer:         drawer,
-			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
-			LuckyUserID:    dataObj.Users[index].ID,
-			LuckyUserLevel: dataObj.Users[index].Level,
-			LuckyUserName:  dataObj.Users[index].Name,
-			Memo:           memo,
-		}
-		dataObj.DrawedRecords = append(dataObj.DrawedRecords, record)
-		returnData = append(returnData, record)
-		dataObj.Users[index].IsDrawed = true
-	}
-
-	if backRatio > 0 {
-		for _, item := range returnData {
-			if item.LuckyUserLevel == 2 {
-				backMoneyRecord := models.BackMoneyRecord{
-					BackTime: time.Now().Format("2006-01-02 15:04:05"),
-					Memo:     "奖品返奖",
-					Money:    awardCount * backRatio,
-					UserID:   item.LuckyUserID,
-					UserName: item.LuckyUserName,
-				}
-				dataObj.BackMoneyRecords = append(dataObj.BackMoneyRecords, backMoneyRecord)
-			}
-		}
-	}
-	setDataErr := common.SetData(dataObj)
+	currentRecords := dataObj.DrawedRecords[len(preRecords):]
+	setDataErr := dataObj.SetData()
 	if setDataErr == nil {
-		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": returnData})
+		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": currentRecords})
 		return
 	} else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": returnData})
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": currentRecords})
 		return
 	}
 }

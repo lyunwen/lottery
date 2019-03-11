@@ -16,7 +16,7 @@ type Data struct {
 	BackMoneyRecords []BackMoneyRecord
 }
 
-func (data *Data) NDraw(actionID int, staffCount int, leaderCount int, drawer string, memo string) (*Data, error) {
+func (data *Data) NDraw(drawKey string, actionID int, staffCount int, leaderCount int, drawer string, memo string) (*Data, error) {
 	var currentAction *DrawedAction
 	actionLen := len(data.Actions)
 	for i, _ := range data.Actions {
@@ -62,6 +62,7 @@ func (data *Data) NDraw(actionID int, staffCount int, leaderCount int, drawer st
 	for _, item := range indexList {
 		data.Users[item].IsDrawed = true
 		record := DrawedRecord{
+			DrawKey:        drawKey,
 			AwardID:        currentAction.AwardID,
 			AwardCount:     1,
 			Drawer:         drawer,
@@ -86,7 +87,7 @@ func (data *Data) NDraw(actionID int, staffCount int, leaderCount int, drawer st
 	return data, indexErr
 }
 
-func (data *Data) EXDraw(staffCount int, leaderCount int, mixCount int, awardID int, awardCount int, backMoney int, drawer string, memo string) (*Data, error) {
+func (data *Data) ExDraw(drawKey string, staffCount int, leaderCount int, mixCount int, awardID int, awardCount int, backMoney int, drawer string, memo string) (*Data, error) {
 	var indexList []int
 	var indexErr error
 	if leaderCount > 0 {
@@ -114,6 +115,7 @@ func (data *Data) EXDraw(staffCount int, leaderCount int, mixCount int, awardID 
 	for _, item := range indexList {
 		data.Users[item].IsDrawed = true
 		record := DrawedRecord{
+			DrawKey:        drawKey,
 			AwardID:        awardID,
 			AwardCount:     awardCount,
 			Drawer:         drawer,
@@ -142,6 +144,59 @@ func (data *Data) EXDraw(staffCount int, leaderCount int, mixCount int, awardID 
 	// 		return data, errors.New("奖品类型:" + strconv.Itoa(awardID) + "不正确")
 	// 	}
 	// }
+	return data, indexErr
+}
+
+func (data *Data) PoolDraw(drawKey string, staffCount int, leaderCount int, mixCount int, awardCount int, backRatio int, drawer string, memo string) (*Data, error) {
+	var indexList []int
+	var indexErr error
+	if leaderCount > 0 {
+		thisIndex, indexErr := getLuckyUserIndex(data.Users, 2)
+		if indexErr != nil {
+			return data, indexErr
+		}
+		indexList = append(indexList, thisIndex)
+	}
+	if staffCount > 0 {
+		thisIndex, indexErr := getLuckyUserIndex(data.Users, 1)
+		if indexErr != nil {
+			return data, indexErr
+		}
+		indexList = append(indexList, thisIndex)
+	}
+	if mixCount > 0 {
+		thisIndex, indexErr := getLuckyUserIndex(data.Users, 0)
+		if indexErr != nil {
+			return data, indexErr
+		}
+		indexList = append(indexList, thisIndex)
+	}
+
+	for _, item := range indexList {
+		data.Users[item].IsDrawed = true
+		record := DrawedRecord{
+			DrawKey:        drawKey,
+			AwardID:        0, //返奖池奖品类型
+			AwardCount:     awardCount,
+			Drawer:         drawer,
+			DrawTime:       time.Now().Format("2006-01-02 15:04:05"),
+			LuckyUserID:    data.Users[item].ID,
+			LuckyUserLevel: data.Users[item].Level,
+			LuckyUserName:  data.Users[item].Name,
+			Memo:           memo,
+		}
+		data.DrawedRecords = append(data.DrawedRecords, record)
+		if data.Users[item].Level == 2 && backRatio > 0 {
+			backMoneyRecord := BackMoneyRecord{
+				BackTime: time.Now().Format("2006-01-02 15:04:05"),
+				Memo:     "现金池返奖",
+				Money:    awardCount * backRatio,
+				UserID:   data.Users[item].ID,
+				UserName: data.Users[item].Name,
+			}
+			data.BackMoneyRecords = append(data.BackMoneyRecords, backMoneyRecord)
+		}
+	}
 	return data, indexErr
 }
 

@@ -1,24 +1,40 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
-	"../common"
+
+	"../models"
+	"github.com/gin-gonic/gin"
 )
 
-func GetAwards(c *gin.Context)  {
-	dataObj := common.GetData()
+func GetAwards(c *gin.Context) {
+	var dataObj = new(models.Data)
+	dataObj, err := dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 	c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": dataObj.Awards})
 	return
 }
 
-func GetCount (c *gin.Context) {
-	dataObj := common.GetData()
+func GetCount(c *gin.Context) {
+	var dataObj = new(models.Data)
+	dataObj, err := dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 	c.JSON(http.StatusCreated, gin.H{"code": "0", "count": dataObj.Count})
 }
 
 func GetNextAction(c *gin.Context) {
-	dataObj := common.GetData()
+	var dataObj = new(models.Data)
+	dataObj, err := dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 	for _, item := range dataObj.Actions {
 		if item.Status == "ToDo" {
 			c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": item})

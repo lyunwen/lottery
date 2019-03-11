@@ -1,6 +1,7 @@
 package models
 
 type DrawedRecord struct {
+	DrawKey        string
 	Drawer         string
 	LuckyUserID    int
 	LuckyUserName  string

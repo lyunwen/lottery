@@ -5,7 +5,6 @@ import (
 	"strconv"
 	"time"
 
-	"../common"
 	"../models"
 	"github.com/gin-gonic/gin"
 )
@@ -17,12 +16,17 @@ func InitData(c *gin.Context) {
 		c.JSON(http.StatusCreated, gin.H{"code": "1", "msg": "密码不正确"})
 		return
 	}
-	dataObj := common.GetData()
+	var dataObj = new(models.Data)
+	dataObj, err := dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 
 	if dataObj.Awards == nil {
 		dataObj.Awards = []models.Award{}
 	} else {
-		for i, _ := range dataObj.Awards {
+		for i := range dataObj.Awards {
 			dataObj.Awards[i].ID = i + 1
 		}
 	}
@@ -30,7 +34,7 @@ func InitData(c *gin.Context) {
 	if dataObj.Actions == nil {
 		dataObj.Actions = []models.DrawedAction{}
 	} else {
-		for i, _ := range dataObj.Actions {
+		for i := range dataObj.Actions {
 			dataObj.Actions[i].Status = "ToDo"
 			dataObj.Actions[i].ID = i + 1
 		}
@@ -38,7 +42,7 @@ func InitData(c *gin.Context) {
 	if dataObj.Users == nil {
 		dataObj.Users = []models.User{}
 	} else {
-		for i, _ := range dataObj.Users {
+		for i := range dataObj.Users {
 			dataObj.Users[i].ID = i + 1
 			dataObj.Users[i].IsDrawed = false
 		}
@@ -69,7 +73,7 @@ func InitData(c *gin.Context) {
 			}
 		}
 	}
-	setDataErr := common.SetData(dataObj)
+	setDataErr := new(models.Data).SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return
@@ -86,7 +90,12 @@ func AddPoolMoney(c *gin.Context) {
 		return
 	}
 	memo := c.Query("memo")
-	dataObj := common.GetData()
+	var dataObj = new(models.Data)
+	dataObj, err = dataObj.GetData()
+	if err != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "2", "msg": "获取txt数据错误", "data": nil})
+		return
+	}
 	dataObj.BackMoneyRecords = append(dataObj.BackMoneyRecords, models.BackMoneyRecord{
 		BackTime: time.Now().Format("2006-01-02 15:04:05"),
 		Memo:     "临时加奖:" + memo,
@@ -95,7 +104,7 @@ func AddPoolMoney(c *gin.Context) {
 		UserName: "",
 	})
 
-	setDataErr := common.SetData(dataObj)
+	setDataErr := new(models.Data).SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return

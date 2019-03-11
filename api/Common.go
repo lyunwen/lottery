@@ -1,12 +1,14 @@
 package api
 
 import (
-	"../models"
 	"errors"
 	"math/rand"
 	"strconv"
+
+	"../models"
 )
 
+///////
 func GetLuckyUserID(users []models.User, level int) (luckyID int, err error) {
 	len := len(users)
 	for i, item := range users {
@@ -16,11 +18,9 @@ func GetLuckyUserID(users []models.User, level int) (luckyID int, err error) {
 			return 0, errors.New("对应level:" + strconv.Itoa(level) + "未中奖人数不足")
 		}
 	}
-
 	luckyID = rand.Intn(len-1) + 1
 	if (users[luckyID].IsDrawed == false) && (level == 0 || users[luckyID].Level == level) {
 		return luckyID, nil
-	} else {
-		return GetLuckyUserID(users, level)
 	}
+	return GetLuckyUserID(users, level)
 }
