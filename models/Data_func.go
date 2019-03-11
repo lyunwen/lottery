@@ -16,8 +16,7 @@ func (data *Data) GetData() (*Data, error) {
 		return data, err
 	}
 	dataJsonStr := string(dataJsonByte)
-	var dataObj *Data
-	err = json.Unmarshal([]byte(dataJsonStr), &dataObj)
+	err = json.Unmarshal([]byte(dataJsonStr), &data)
 	if err != nil {
 		return data, err
 	}

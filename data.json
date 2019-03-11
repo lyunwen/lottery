@@ -1,1 +1,319 @@
-{"Version":"b0976aa34fe105c277896a35134e3cf5","Count":{"PoolMoney":0,"AllPeopleCount":48,"AllLuckyCount":0,"LuckyLeaderCount":0,"NoLuckyLeaderCount":3,"LuckyStaffCount":0,"NoLuckyStaffCount":45},"Awards":[{"ID":1,"Name":"testName1","PicName":"1.png","Description":"价值30元大奖","Money":3000},{"ID":2,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":3,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":4,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":5,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":6,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":7,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":8,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":9,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":10,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":11,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":12,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":13,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":14,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":15,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000},{"ID":16,"Name":"testName1","PicName":"1.png","Description":"价值60元大奖","Money":6000}],"Actions":[{"ID":1,"AwardID":1,"PeopleCount":20,"BackMoney":20,"Memo":"","Status":"ToDo"},{"ID":2,"AwardID":2,"PeopleCount":30,"BackMoney":20,"Memo":"","Status":"ToDo"},{"ID":3,"AwardID":2,"PeopleCount":5,"BackMoney":20,"Memo":"","Status":"ToDo"}],"Users":[{"ID":1,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":2,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":3,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":4,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":5,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":6,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":7,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":8,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":9,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":10,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":11,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":12,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":13,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":14,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":15,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":16,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":17,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":18,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":19,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":20,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":21,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":22,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":23,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":24,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":25,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":26,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":27,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":28,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":29,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":30,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":31,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":32,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":33,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":34,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":35,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":36,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":37,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":38,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":39,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":40,"Name":"chrowderliu1","Level":2,"IsDrawed":false},{"ID":41,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":42,"Name":"chrowderliu1","Level":2,"IsDrawed":false},{"ID":43,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":44,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":45,"Name":"chrowderliu1","Level":2,"IsDrawed":false},{"ID":46,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":47,"Name":"chrowderliu1","Level":1,"IsDrawed":false},{"ID":48,"Name":"chrowderliu1","Level":1,"IsDrawed":false}],"DrawedRecords":[],"BackMoneyRecords":[]}
+{
+  "Version": "623a339557c61bf3b01ee7729458eea2",
+  "Count": {
+    "PoolMoney": 0,
+    "AllPeopleCount": 0,
+    "AllLuckyCount": 0,
+    "LuckyLeaderCount": 0,
+    "NoLuckyLeaderCount": 0,
+    "LuckyStaffCount": 0,
+    "NoLuckyStaffCount": 0
+  },
+  "Awards": [
+    {
+      "Name": "TestName_1",
+      "PicName": "TestPicName_1",
+      "Description": "TestDescription_1",
+      "Money": 100
+    },
+    {
+      "Name": "TestName_1",
+      "PicName": "TestPicName_1",
+      "Description": "TestDescription_1",
+      "Money": 100
+    },
+    {
+      "Name": "TestName_1",
+      "PicName": "TestPicName_1",
+      "Description": "TestDescription_1",
+      "Money": 100
+    },
+    {
+      "Name": "TestName_1",
+      "PicName": "TestPicName_1",
+      "Description": "TestDescription_1",
+      "Money": 100
+    },
+    {
+      "Name": "TestName_1",
+      "PicName": "TestPicName_1",
+      "Description": "TestDescription_1",
+      "Money": 100
+    }
+  ],
+  "Actions": null,
+  "Users": [
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    },
+    {
+      "Name": "Name_1",
+      "Level": 1,
+      "IsDrawed": false
+    }
+  ],
+  "DrawedRecords": null,
+  "BackMoneyRecords": null
+}
