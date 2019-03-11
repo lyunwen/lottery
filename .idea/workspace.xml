@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/api/ManageApi.go" line="76" />
+    <bookmark url="file://$PROJECT_DIR$/api/ManageApi.go" line="80" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fac9bc9-cf2a-4ce1-b525-f0ccb25b1ad2" name="Default Changelist" comment="文字整理">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery.exe" beforeDir="false" afterPath="$PROJECT_DIR$/lottery.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lottery.go" beforeDir="false" afterPath="$PROJECT_DIR$/lottery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Data.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/Data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/DrawApi.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/DrawApi.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,13 +34,13 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5221239">
+    <splitter split-orientation="horizontal" split-proportion="0.34076434">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wwwroot/behind.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
+                <state relative-caret-position="-8">
                   <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
                 </state>
               </provider>
@@ -51,27 +48,25 @@
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/wwwroot/index.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/api/DrawApi.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1760">
-                  <caret line="118" column="30" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="30" />
-                  <folding>
-                    <element signature="n#!!block;n#ExDraw#0" />
-                    <element signature="n#!!block;n#PoolDraw#0" />
-                  </folding>
-                </state>
+                <state relative-caret-position="-8" />
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/models/Data_func.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="457">
+                  <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lottery.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="33" selection-end-column="24" />
+                <state>
+                  <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
                 </state>
               </provider>
             </entry>
@@ -79,8 +74,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/api/GetInfoApi.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+                <state relative-caret-position="-8">
+                  <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="408">
+                  <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
                 </state>
               </provider>
             </entry>
@@ -88,7 +92,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/使用手册.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="48">
+                <state>
                   <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
                 </state>
               </provider>
@@ -97,8 +101,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/models/Data.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+                <state relative-caret-position="-8">
+                  <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -106,7 +110,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://D:/GO-ROOT/src/runtime/panic.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="10864">
+                <state>
                   <caret line="683" selection-start-line="683" selection-end-line="683" />
                 </state>
               </provider>
@@ -115,7 +119,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/系统介绍.txt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
+                <state>
                   <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
                 </state>
               </provider>
@@ -125,27 +129,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/api/DrawApi.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="752">
-                  <caret line="55" column="31" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-                  <folding>
-                    <element signature="n#!!block;n#ExDraw#0" />
-                    <element signature="n#!!block;n#PoolDraw#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/api/Common.go">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
-                  <folding>
-                    <element signature="e#13#70#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="576">
+                  <caret line="326" column="14" lean-forward="true" selection-start-line="326" selection-start-column="14" selection-end-line="326" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -165,9 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exdraw-type-value</find>
-      <find>EXGetDrawParam</find>
-      <find>AllPeopleCount</find>
       <find>AllPeopelCount</find>
       <find>exdraw-fix-count</find>
       <find>Fix</find>
@@ -195,6 +180,9 @@
       <find>9</find>
       <find>43</find>
       <find>36</find>
+      <find>data.GetData</find>
+      <find>GetData</find>
+      <find>.GetData</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="D:\GO-ROOT" />
@@ -218,23 +206,24 @@
         <option value="$PROJECT_DIR$/api/NDrawApi.go" />
         <option value="$PROJECT_DIR$/Data.json" />
         <option value="$PROJECT_DIR$/api/GetInfo.go" />
-        <option value="$PROJECT_DIR$/api/GetInfoApi.go" />
         <option value="$PROJECT_DIR$/views/index_old.html" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/wwwroot/index_old.js" />
         <option value="$PROJECT_DIR$/views/behind.html" />
         <option value="$PROJECT_DIR$/common/func_file.go" />
-        <option value="$PROJECT_DIR$/api/ManageApi.go" />
         <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/使用手册.txt" />
         <option value="$PROJECT_DIR$/系统介绍.txt" />
         <option value="$PROJECT_DIR$/wwwroot/behind.js" />
         <option value="$PROJECT_DIR$/api/Common.go" />
-        <option value="$PROJECT_DIR$/api/DrawApi.go" />
         <option value="$PROJECT_DIR$/models/Data.go" />
         <option value="D:/code/consul/新建文本文档.txt" />
         <option value="$PROJECT_DIR$/lottery.go" />
+        <option value="$PROJECT_DIR$/models/Data_func.go" />
+        <option value="$PROJECT_DIR$/api/GetInfoApi.go" />
+        <option value="$PROJECT_DIR$/api/ManageApi.go" />
+        <option value="$PROJECT_DIR$/api/DrawApi.go" />
       </list>
     </option>
   </component>
@@ -250,6 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,7 +266,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,11 +275,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="D:/code/consul/新建文本文档.txt" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -338,7 +327,7 @@
     <frame x="-1928" y="-8" width="1936" height="1216" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15831557" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16311301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -347,11 +336,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27423823" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32779318" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32766762" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32841328" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32963988" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28070176" />
+      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32766762" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3295562" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23512748" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32963988" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -381,7 +370,8 @@
     <MESSAGE value="异常处理优化" />
     <MESSAGE value="随机逻辑添加" />
     <MESSAGE value="文字整理" />
-    <option name="LAST_COMMIT_MESSAGE" value="文字整理" />
+    <MESSAGE value="逻辑优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="逻辑优化" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -472,16 +462,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.vscode/launch.json" />
-    <entry file="file://D:/GO-PATH/src/github.com/alfred-zhong/wserver/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-          <folding>
-            <element signature="e#97#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/GO-PATH/src/github.com/alfred-zhong/wserver/server.go" />
     <entry file="file://D:/GO-PATH/src/github.com/gorilla/websocket/conn.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14460">
@@ -640,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="56" selection-start-line="76" selection-start-column="56" selection-end-line="76" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -675,83 +649,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/code/consul/新建文本文档.txt" />
     <entry file="file://$PROJECT_DIR$/wwwroot/behind.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="-8">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wwwroot/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/lottery.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/使用手册.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state>
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://D:/GO-ROOT/src/runtime/panic.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10864">
+        <state>
           <caret line="683" selection-start-line="683" selection-end-line="683" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/系统介绍.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state>
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/code/consul/新建文本文档.txt">
+    <entry file="file://D:/GO-ROOT/src/encoding/json/decode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="88" selection-start-line="1" selection-start-column="88" selection-end-line="1" selection-end-column="88" />
+        <state relative-caret-position="242">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/DrawApi.go">
+    <entry file="file://$PROJECT_DIR$/wwwroot/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="118" column="30" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="30" />
-          <folding>
-            <element signature="n#!!block;n#ExDraw#0" />
-            <element signature="n#!!block;n#PoolDraw#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Common.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#13#70#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-8" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Data.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="-8">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/GetInfoApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="-8">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lottery.go">
+    <entry file="file://$PROJECT_DIR$/api/ManageApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="33" selection-end-column="24" />
+        <state relative-caret-position="408">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Common.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/DrawApi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="326" column="14" lean-forward="true" selection-start-line="326" selection-start-column="14" selection-end-line="326" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Data_func.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -322,11 +322,11 @@ func PoolDraw(c *gin.Context) {
 	}
 	currentRecords := dataObj.DrawedRecords[len(preRecords):]
 	setDataErr := dataObj.SetData()
-	if setDataErr == nil {
-		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": currentRecords})
+	if setDataErr != nil {
+		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": nil})
 		return
 	} else {
-		c.JSON(http.StatusOK, gin.H{"code": "99", "msg": setDataErr.Error(), "data": currentRecords})
+		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok", "data": currentRecords})
 		return
 	}
 }
