@@ -42,7 +42,7 @@ var (
 
 //非线程安全
 func (data *Data) SetDataCore() error {
-	preData, err := data.GetData()
+	preData, err := new(Data).GetData()
 	if err != nil {
 		return err
 	}

@@ -73,7 +73,7 @@ func InitData(c *gin.Context) {
 			}
 		}
 	}
-	setDataErr := new(models.Data).SetData()
+	setDataErr := dataObj.SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return
@@ -104,7 +104,7 @@ func AddPoolMoney(c *gin.Context) {
 		UserName: "",
 	})
 
-	setDataErr := new(models.Data).SetData()
+	setDataErr := dataObj.SetData()
 	if setDataErr == nil {
 		c.JSON(http.StatusOK, gin.H{"code": "0", "msg": "ok"})
 		return
