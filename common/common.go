@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"io"
+	"strconv"
 )
 
 //获取唯一ID
@@ -18,4 +19,8 @@ func GetUUID() string {
 	h := md5.New()
 	h.Write([]byte(base64.URLEncoding.EncodeToString(b)))
 	return hex.EncodeToString(h.Sum(nil))
+}
+
+func IntToString(value int) string {
+	return strconv.Itoa(value)
 }
