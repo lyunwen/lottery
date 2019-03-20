@@ -7,9 +7,7 @@ import (
 	"net/http"
 )
 
-
 func main() {
-
 	router := gin.Default()
 
 	//api路由

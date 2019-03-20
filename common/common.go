@@ -24,3 +24,8 @@ func GetUUID() string {
 func IntToString(value int) string {
 	return strconv.Itoa(value)
 }
+
+func StringToInt(value string) (int, error) {
+	intValue, err := strconv.Atoi(value)
+	return intValue, err
+}
