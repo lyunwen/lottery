@@ -13,17 +13,17 @@ $(function () {
             if (this === void 0 || this === null)
                 throw new TypeError();
 
-            var t = Object(this);
-            var len = t.length >>> 0;
+            let t = Object(this);
+            let len = t.length >>> 0;
             if (typeof fun !== "function") {
                 throw new TypeError();
             }
 
-            var res = [];
-            var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
-            for (var i = 0; i < len; i++) {
+            let res = [];
+            let thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+            for (let i = 0; i < len; i++) {
                 if (i in t) {
-                    var val = t[i];
+                    let val = t[i];
                     if (fun.call(thisArg, val, i, t))
                         res.push(val);
                 }
@@ -269,7 +269,7 @@ $(function () {
         }
     }
 
-    var Page = {
+    let Page = {
         Init: function () {
             Page.Connection = new WebSocket("ws://localhost:12345/ws");
 
@@ -302,7 +302,7 @@ $(function () {
                 Page.QueryAndShowStatics();
             });
 
-            var auto = new MinAutoComplete({
+            let auto = new MinAutoComplete({
                 originData: leaderArray
             });
             auto.init();
@@ -750,15 +750,15 @@ $(function () {
             Page.ReadyObj.MixCount = thisParam.MixCount;
             Page.ReadyObj.PoolMoney = Page.GetPoolMoney();
             Page.ReadyObj.Drawer = "pool";
-            var leaderCount = 0;
+            let leaderCount = 0;
             if (parseInt(thisParam.LeaderCount) > 0) {
                 leaderCount = parseInt(thisParam.LeaderCount);
             }
-            var mixCount = 0;
+            let mixCount = 0;
             if (parseInt(thisParam.MixCount) > 0) {
                 mixCount = parseInt(thisParam.MixCount);
             }
-            var staffCount = 0;
+            let staffCount = 0;
             if (parseInt(thisParam.StaffCount) > 0) {
                 staffCount = parseInt(thisParam.StaffCount);
             }

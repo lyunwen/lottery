@@ -67,7 +67,24 @@ func (data *Data) SetDataCore() error {
 	return nil
 }
 
-var fileLock bool = false
+func (data *Data) ReSetData() error {
+	data, err := data.CountData()
+	if err != nil {
+		return err
+	}
+	dataJsonByte, err := json.Marshal(data)
+	if err != nil {
+		return err
+	}
+	dataJsonStr := string(dataJsonByte)
+	err = ioutil.WriteFile("data.json", []byte(dataJsonStr), 0644)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+var fileLock = false
 
 func (data *Data) CountData() (*Data, error) {
 	//PoolMoney
