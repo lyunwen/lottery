@@ -13,12 +13,13 @@ func main() {
 	//api路由
 	router.Group("/api/count").GET("/", api.GetCount)
 	router.Group("/api/getAwards").GET("/", api.GetAwards)
-	router.Group("/api/init").GET("/", api.InitData)
+	router.Group("/api/initData").GET("/", api.InitData)
 	router.Group("/api/getNextAction").GET("/", api.GetNextAction)
 	router.Group("/api/ndraw").GET("/", api.NDraw)
 	router.Group("/api/exdraw").GET("/", api.ExDraw)
 	router.Group("/api/pooldraw").GET("/", api.PoolDraw)
 	router.Group("/api/addMoney").GET("/", api.AddPoolMoney)
+	router.Group("/api/initSystem").GET("/", api.InitSystem)
 	//web socket 路由
 	router.GET("/ws", func(c *gin.Context) { sockects.WebSocketHandler(c.Writer, c.Request) })
 

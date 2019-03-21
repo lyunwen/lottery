@@ -8,6 +8,7 @@ import (
 
 type Data struct {
 	Version          string
+	Description      string
 	Count            Count
 	Awards           []Award
 	Actions          []DrawedAction

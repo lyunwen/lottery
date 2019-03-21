@@ -339,7 +339,7 @@ $(function () {
 
         DataReset: function () {
             $.ajax({
-                url: "/api/init",
+                url: "/api/initData",
                 data: {pswd: $("#input-data-init").val(),},
                 dataType: "json",
                 type: "get",
